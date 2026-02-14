@@ -1,0 +1,73 @@
+:root{
+  --bg:#fafafa; --card:#ffffff; --muted:#6b7280; --accent:#e39f8f; --accent-dark:#c86f54; --radius:12px; --container:1100px;
+  --shadow: 0 6px 18px rgba(17,24,39,0.06);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:#0f172a; -webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:24px}
+
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.logo{font-weight:700;font-size:20px;color:var(--accent-dark);text-decoration:none;display:inline-flex;align-items:center}
+.logo img{height:48px;display:block}
+.nav-actions a{margin-left:12px}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;background:transparent;border:1px solid rgba(15,23,42,0.06);text-decoration:none;color:inherit;font-weight:600}
+.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-dark));color:#fff;border:0}
+.btn-ghost{background:transparent;border:1px solid rgba(15,23,42,0.06)}
+
+.hero{position:relative;background-size:cover;background-position:center;color:#fff;padding:100px 0}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.5));backdrop-filter: blur(2px)}
+.hero-inner{position:relative;z-index:2;max-width:760px}
+.hero h1{font-size:48px;margin:0 0 8px}
+.lead{font-size:18px;opacity:0.95}
+.hero-ctas{margin-top:18px}
+
+.about{padding:40px 0}
+.about-grid{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:center}
+.about-photo{height:240px;background-size:cover;background-position:center;border-radius:14px;box-shadow:var(--shadow)}
+.values{display:flex;gap:12px;padding:0;margin:12px 0;list-style:none}
+.values li{background:#fff;padding:8px 12px;border-radius:999px;box-shadow:var(--shadow);font-weight:600}
+
+.services{padding:40px 0}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.card{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow)}
+
+.gallery{padding:32px 0}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.gallery-grid img{width:100%;height:160px;object-fit:cover;border-radius:8px;cursor:pointer;transition:transform .25s}
+.gallery-grid img:hover{transform:scale(1.03)}
+
+.reviews{padding:32px 0}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.review{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);margin:0}
+.review cite{display:block;margin-top:12px;color:var(--muted);font-style:normal}
+
+.prices{padding:32px 0}
+.prices-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.price-item{background:var(--card);padding:16px;border-radius:12px;box-shadow:var(--shadow)}
+
+.contact{padding:32px 0}
+.contact-grid{display:grid;grid-template-columns:1fr 360px;gap:20px}
+.booking-form{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px}
+.booking-form label{display:flex;flex-direction:column;font-size:14px}
+.booking-form input,.booking-form select{padding:10px;border-radius:8px;border:1px solid #e6e9ef;margin-top:6px}
+
+.site-footer{padding:18px 0;background:transparent;text-align:center;color:var(--muted)}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+
+.toast{position:fixed;right:20px;bottom:20px;background:#111827;color:#fff;padding:12px 16px;border-radius:10px;opacity:0;transform:translateY(20px);transition:all .3s;pointer-events:none}
+.toast.show{opacity:1;transform:translateY(0);pointer-events:auto}
+
+@media (max-width:900px){
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .hero{padding:80px 0}
+  .hero h1{font-size:38px}
+  .logo img{height:40px}
+}
+@media (max-width:480px){
+  .container{padding:16px}
+  .gallery-grid img{height:120px}
+  .nav{padding:8px 0}
+}
